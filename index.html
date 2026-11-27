@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="A birthday card from Charlie to Cynthia."
+    />
+    <title>Happy Birthday, Cynthia Z</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #211629;
+        --cream: #fff0dc;
+        --pink: #f0a7bd;
+        --paper: #fff4e7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--cream);
+        font:
+          1rem/1.65 system-ui,
+          sans-serif;
+      }
+      a,
+      button {
+        font: inherit;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid #f0ad56;
+        outline-offset: 5px;
+      }
+      header,
+      main > section,
+      footer {
+        padding-inline: max(5vw, calc((100% - 1120px) / 2));
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding-block: 22px;
+        border-bottom: 1px solid #ffffff26;
+        font-size: 0.875rem;
+      }
+      header a {
+        text-underline-offset: 5px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: clamp(28px, 7vw, 96px);
+        padding-block: clamp(48px, 8vw, 104px);
+        background: radial-gradient(
+          ellipse at 76% 35%,
+          #572a48,
+          transparent 66%
+        );
+      }
+      h1,
+      h2 {
+        margin: 0;
+        font-family: Georgia, serif;
+        font-weight: 400;
+        line-height: 1.01;
+        letter-spacing: -0.04em;
+      }
+      h1 {
+        font-size: clamp(3.5rem, 7.5vw, 7.25rem);
+      }
+      h1 em {
+        display: block;
+        color: var(--pink);
+        font-weight: 400;
+      }
+      h2 {
+        font-size: clamp(2.4rem, 5vw, 4.3rem);
+      }
+      .hero p {
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        max-width: 33ch;
+        margin: 24px 0 28px;
+      }
+      .action {
+        display: inline-block;
+        border: 0;
+        border-radius: 100px;
+        background: var(--cream);
+        color: var(--ink);
+        padding: 12px 22px;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      figure {
+        margin: 0;
+      }
+      .hero figure {
+        padding: 10px;
+        border: 1px solid #ffffff4a;
+        border-radius: 180px 180px 16px 16px;
+        background: #ffffff12;
+      }
+      .hero img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 5/6;
+        object-fit: cover;
+        object-position: center 35%;
+        border-radius: inherit;
+      }
+      .memories {
+        background: var(--paper);
+        color: var(--ink);
+        padding-block: clamp(52px, 8vw, 100px);
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(10px, 2vw, 24px);
+        margin-top: 28px;
+      }
+      .gallery figure {
+        border-radius: 12px;
+        background: #ead8d3;
+        overflow: hidden;
+      }
+      .gallery img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: contain;
+        background: #e8d6d0;
+      }
+      figcaption {
+        padding: 10px 12px;
+        font-size: 0.875rem;
+        font-weight: 650;
+      }
+      .letter {
+        padding-block: clamp(54px, 8vw, 104px);
+        background: #392039;
+        text-align: center;
+      }
+      .letter article {
+        max-width: 660px;
+        margin: auto;
+      }
+      .letter p {
+        font-size: clamp(1.02rem, 2vw, 1.2rem);
+        margin: 22px 0;
+      }
+      .signature {
+        font-style: italic;
+        color: var(--pink);
+      }
+      .wish {
+        padding-block: clamp(48px, 8vw, 85px);
+        text-align: center;
+      }
+      .wish h2 {
+        margin-bottom: 24px;
+      }
+      .wish p {
+        min-height: 1.65em;
+        color: var(--pink);
+      }
+      .candles {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 auto 22px;
+      }
+      .candle {
+        width: 10px;
+        height: 44px;
+        display: block;
+        position: relative;
+        border-radius: 3px;
+        background: repeating-linear-gradient(
+          40deg,
+          #f3b0bf 0 5px,
+          #fff0dc 5px 9px
+        );
+      }
+      .candle::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -16px;
+        width: 10px;
+        height: 14px;
+        border-radius: 65% 35% 60% 40%;
+        background: #ffd18b;
+        box-shadow: 0 0 17px #ffd18b;
+      }
+      .candles.out .candle::before {
+        visibility: hidden;
+      }
+      footer {
+        text-align: center;
+        padding-block: 24px;
+        border-top: 1px solid #ffffff26;
+        font-size: 0.875rem;
+      }
+      @media (max-width: 720px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero figure {
+          max-width: 390px;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <time datetime="2026-11-28">28 November 2026</time
+      ><a href="#letter">Read the letter</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Happy birthday, <em>Cynthia.</em></h1>
+          <p lang="zh-Hant">
+            Cynthia 寶寶，生日快樂！希望妳每天都過得開心、股票賺錢，球技大漲，還有很多讓妳笑的時刻。
+          </p>
+          <a class="action" href="#memories">See our photos</a>
+        </div>
+        <figure>
+          <img
+            src="concert.webp"
+            alt="Charlie and Cynthia together at the Jay Chou concert"
+            fetchpriority="high"
+          />
+        </figure>
+      </section>
+      <section class="memories" id="memories">
+        <h2>A few of my favorite days</h2>
+        <div class="gallery">
+          <figure>
+            <img
+              src="bondi.webp"
+              alt="Cynthia by the ocean at Bondi"
+              loading="lazy"
+            />
+            <figcaption>A day at Bondi</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="booth.webp"
+              alt="A strip of photos of Charlie and Cynthia"
+              loading="lazy"
+            />
+            <figcaption>The photo booth</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="hands.webp"
+              alt="Charlie and Cynthia holding hands"
+              loading="lazy"
+            />
+            <figcaption>Hand in hand</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="letter" id="letter">
+        <article>
+          <h2 lang="zh-Hant">給我的寶貝</h2>
+          <p lang="zh-Hant">
+            我很開心今年可以陪妳過生日。前幾天一起去聽周杰倫，現在回頭看照片，還是會想到那天坐在妳旁邊有多開心。
+          </p>
+          <p lang="zh-Hant">
+            新的一歲，希望妳常常笑、累了就好好休息，也要記得把想去的地方跟想吃的東西都告訴我。我想繼續陪妳去很多地方，也想繼續跟妳過那些一起吃飯、散步的小日子。
+          </p>
+          <p lang="zh-Hant">生日快樂，寶貝。今天的蛋糕，第一口留給妳。</p>
+          <p class="signature">Love, Charlie</p>
+        </article>
+      </section>
+      <section class="wish" aria-labelledby="wish-title">
+        <h2 id="wish-title">Make a wish</h2>
+        <div class="candles" aria-hidden="true">
+          <span class="candle"></span><span class="candle"></span
+          ><span class="candle"></span>
+        </div>
+        <button id="candles" class="action" type="button">
+          Blow out the candles
+        </button>
+        <p id="wish-status" role="status"></p>
+      </section>
+    </main>
+    <footer>Made for Cynthia, with love from Charlie</footer>
+    <script>
+      const button = document.querySelector("#candles");
+      const candles = document.querySelector(".candles");
+      const status = document.querySelector("#wish-status");
+
+      button.addEventListener("click", () => {
+        const extinguished = candles.classList.toggle("out");
+        button.textContent = extinguished
+          ? "Relight the candles"
+          : "Blow out the candles";
+        status.textContent = extinguished ? "Happy birthday, Cynthia! ♡" : "";
+      });
+    </script>
+  </body>
+</html>
